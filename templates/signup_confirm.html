@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title><?php echo $page_title; ?></title>
+        <meta content="スケジュール調整Webアプリ「イベのスケ」" name="title">
+        <meta content="スケジュール調整アプリです。" name="description">
+        <meta content="スケジュール調整" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./../stylesheet/style.css" rel="stylesheet">
+        <!-- フォントの初期設定 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./../stylesheet/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <main>
+            <ul class="c_breadcrumbs">
+                <li>HOME</li>
+                <li>新規会員登録</li>
+            </ul>
+            <h1 class="visuallyhidden"><?php echo $page_title; ?></h1>
+            <article class="c_form-box">
+                <h2>SignIn</h2>
+                <p>以下の内容で登録してよろしいですか？</p>
+                <table>
+                    <tr>
+                        <th>ログインID</th>
+                        <td>{{user.uLoginId}}</td>
+                    </tr>
+                    <tr>
+                        <th>パスワード</th>
+                        <td>{{user.unHashedPass}}</td>
+                    </tr>
+                    <tr>
+                        <th>表示名</th>
+                        <td>{{user.uName}}</td>
+                    </tr>
+                </table>
+                <form method="post" action="">
+                    <div class="c_form-box__button-box">
+                        <button class="c_form-box__btn-back" name="btn" value="back">　戻　る　</button>
+                        <button class="c_form-box__btn-nomal" name="btn" value="submit">　登　録　</button>
+                    </div>
+                </form>
+            </article>
+        </main>
+    </body>
+</html>

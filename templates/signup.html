@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>イベのスケ | サインアップ</title>
+        <meta content="スケジュール調整Webアプリ「イベのスケ」" name="title">
+        <meta content="スケジュール調整アプリです。" name="description">
+        <meta content="スケジュール調整" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./../stylesheet/style.css" rel="stylesheet">
+        <!-- フォントの初期設定 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./../stylesheet/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="visuallyhidden">イベのスケ | サインアップ</h1>
+        </header>
+        <main>
+            <ul class="c_breadcrumbs">
+                <li>HOME</li>
+                <li>新規会員登録</li>
+            </ul>
+            <article class="c_form-box">
+                <h2>SignUp</h2>
+                <form method="post" action="./signup_confirm.php">
+                    <div class="c_form-box__input-box">
+                        <label for="signInULoginId">ログインID</label>
+                        <input id="signInULoginId" class="width100" name="signInULoginId" type="text" value="{{user.uLoginId}}">
+                        <p>{{validationMsgs.uLoginId}}</p>
+                    </div>
+                    <div class="c_form-box__input-box">
+                        <label for="signInUPass">パスワード</label>
+                        <input id="signInUPass" class="width100" name="signInUPass" type="text" value="{{user.unHashedPass}}">
+                        <p>{{validationMsgs.unHashedPass}}</p>
+                    </div>
+                    <div class="c_form-box__input-box">
+                        <label for="signInUName">表示名</label>
+                        <input id="signInUName" class="width100" name="signInUName" type="text" value="{{user.uName}}">
+                        <p>{{validationMsgs.uName}}</p>
+                    </div>
+                    <div class="c_form-box__button-box">
+                        <button class="c_form-box__btn-nomal">確認画面へ</button>
+                    </div>
+                </form>
+            </article>
+        </main>
+    </body>
+</html>
