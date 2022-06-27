@@ -1,0 +1,33 @@
+.p-show-event-list_cardbox{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &>div{
+        width: 47.5%;
+        padding: 3rem;
+        flex-shrink: 0;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: white;
+        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.1);
+        margin-bottom: 6rem;
+        &>dl{
+            margin-bottom: 3rem;
+            &>div{
+                margin: 1rem 0;
+                &>dt{
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-weight: 700;
+                }
+                &>dd{
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

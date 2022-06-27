@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>イベのスケ | サインアップ</title>
+        <meta content="スケジュール調整Webアプリ「イベのスケ」" name="title">
+        <meta content="スケジュール調整アプリです。" name="description">
+        <meta content="スケジュール調整" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./../stylesheet/style.css" rel="stylesheet">
+        <!-- font-awesome -->
+        <script src="https://kit.fontawesome.com/03ebcee952.js" crossorigin="anonymous"></script>
+	    <!-- jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="visuallyhidden">イベのスケ | サインアップ</h1>
+        </header>
+        <main>
+            <ul class="c_breadcrumbs">
+                <li>HOME</li>
+                <li>新規会員登録</li>
+            </ul>
+            <article class="c_form-box">
+                <h2>イベント詳細設定</h2>
+                <form method="post" action="">
+                    {% for candidate in event_data.candidates %}
+
+                    <div class="c_form-box__input-variable-length-box-wrapper">
+                        <label for="scope">{{candidate.candidate.getCDateByFilter}}</label>
+                        {% for candidate_time_object in candidate.candidate_time %}
+                        <div class="c_form-box__input-variable-length-box">
+                            <i class="fas fa-times-circle"></i>
+                            <input id="scope" class="width60" name="candidates[{{candidate.candidate.cDate}}][time][]
+                            " type="number" value="{{candidate_time_object.ctTime}}" placeholder="例）09:00ならば「0900」" required>
+                            <p>??:??</p>
+                        </div>
+                        {% endfor %}
+                        <p></p>
+                        <div class="c_form-box__input-variable-length-box-add-btn">
+                            <i class="fas fa-plus-square"></i>開催時刻を追加する
+                        </div>
+                        <div><input id="addNomalPrice" class="width80" name="candidates[{{candidate.candidate.cDate}}][price]" type="number" value="{{candidate.candidate.cPrice}}" required>円</div>
+                        <input type="hidden" name="workDate" value="{{candidate.candidate.cDate}}">
+                    </div>
+                    {% endfor %}
+                    <div class="c_form-box__button-box">
+                        <button class="c_form-box__btn-nomal" name="btn">確認画面へ</button>
+                    </div>
+                </form>
+            </article>
+        </main>
+        <script src="./../javascripts/variableLengthFormDetail.js"></script>
+    </body>
+</html>

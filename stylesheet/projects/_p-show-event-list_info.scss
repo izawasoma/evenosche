@@ -1,0 +1,30 @@
+.p-show-event-list-detail_info{
+    width: 90%;
+    margin: 0 auto;
+    padding: 5rem 6rem;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.1);
+    margin-bottom: 6rem;   
+    &>h3{
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 3rem;
+    }
+    &>dl{
+        margin-bottom: 3rem;
+        &>div{
+            margin: 1rem 0;
+            &>dt{
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 700;
+            }
+            &>dd{
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 300;
+            }
+        }
+    }
+}
