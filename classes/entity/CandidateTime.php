@@ -21,10 +21,10 @@ class CandidateTime {
         $this->cId = $cId;
     }
     public function getCtTime(): ?string {
-        return $this->ctTime;
+        return substr($this->ctTime,0,4);
     }
     public function setCtTime(string $ctTime): void {
-        $this->ctTime = $ctTime;
+        $this->ctTime = $ctTime."00";
     }
     public function getCtTimeByFilter(): ?string{
         $hour = substr($this->ctTime,0,2);

@@ -40,7 +40,7 @@ class EventDAO {
         return  $dpId;
     }
 
-    public function findByPk(int $e_id) :Event{
+    public function findByPK(int $e_id) :Event{
         $sql = "SELECT * FROM event WHERE e_id = :e_id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(":e_id",$e_id,PDO::PARAM_INT);
@@ -70,7 +70,7 @@ class EventDAO {
             $event->setEHighPrice($eHighPrice);
             $event->setENomalPrice($eNomalPrice);
         }
-        
+
         return $event;
     }
 }

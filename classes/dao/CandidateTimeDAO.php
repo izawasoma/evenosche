@@ -32,5 +32,27 @@ class CandidateTimeDAO {
         }
         return  $dpId;
     }
+
+    public function findByPK(int $ct_id) :CandidateTime{
+        $sql = "SELECT * FROM candidate_time WHERE ct_id = :ct_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":ct_id",$ct_id,PDO::PARAM_INT);
+        $result = $stmt->execute();
+
+        $candidateTime = null;
+
+        if($result && $row = $stmt->fetch()){
+            $ctId = $row["ct_id"];
+            $cId = $row["c_id"];
+            $ctTime = $row["ct_time"];
+
+            $candidateTime = new CandidateTime;
+            $candidateTime->setCtId($ctId);
+            $candidateTime->setCId($cId);
+            $candidateTime->setCtTime($ctTime);
+        }
+
+        return $candidateTime;
+    }
 }
 ?>

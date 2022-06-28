@@ -34,5 +34,29 @@ class CandidateDAO {
         }
         return  $dpId;
     }
+
+    public function findByPK(int $c_id) :Candidate{
+        $sql = "SELECT * FROM candidate WHERE c_id = :c_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":c_id",$c_id,PDO::PARAM_INT);
+        $result = $stmt->execute();
+
+        $candidate = null;
+
+        if($result && $row = $stmt->fetch()){
+            $cId = $row["c_id"];
+            $eId = $row["e_id"];
+            $cDate = $row["c_date"];
+            $cPrice = $row["c_price"];
+
+            $candidate = new Candidate;
+            $candidate->setCId($cId);
+            $candidate->setEId($eId);
+            $candidate->setCDate($cDate);
+            $candidate->setCPrice($cPrice);
+        }
+
+        return $candidate;
+    }
 }
 ?>
