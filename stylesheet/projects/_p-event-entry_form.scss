@@ -1,31 +1,37 @@
 .p-event-entry_form{
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    &>div{
-        width: 47.5%;
+    &>h3{
+        font-size: 2.4rem;
+        margin-bottom: 5rem;
+        text-align: center;
+    }
+    &__candidate-box{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
         padding: 3rem;
-        flex-shrink: 0;
         border-radius: 2rem;
         box-sizing: border-box;
         background-color: white;
         box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.1);
-        margin-bottom: 6rem;
-        &>dl{
-            margin-bottom: 3rem;
-            &>div{
-                margin: 1rem 0;
-                &>dt{
-                    font-size: 1.6rem;
-                    line-height: 2.4rem;
-                    font-weight: 700;
-                }
-                &>dd{
-                    font-size: 1.6rem;
-                    line-height: 2.4rem;
-                    font-weight: 300;
+        margin-bottom: 3rem;
+        &>p{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &>ul{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: scroll;
+            &>{
+                li{
+                    width: fit-content;
+                    height: fit-content;
                 }
             }
         }
