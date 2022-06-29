@@ -1,6 +1,7 @@
 {
     "require": {
-        "twig/twig": "^3.4"
+        "twig/twig": "^3.4",
+        "php":"^7.4.10"
     },
     "autoload":{
         "psr-4":{
