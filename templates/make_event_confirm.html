@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>イベのスケ | サインアップ</title>
+        <meta content="スケジュール調整Webアプリ「イベのスケ」" name="title">
+        <meta content="スケジュール調整アプリです。" name="description">
+        <meta content="スケジュール調整" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./../stylesheet/style.css" rel="stylesheet">
+        <!-- font-awesome -->
+        <script src="https://kit.fontawesome.com/03ebcee952.js" crossorigin="anonymous"></script>
+	    <!-- jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="visuallyhidden">イベのスケ | サインアップ</h1>
+        </header>
+        <main>
+            <ul class="c_breadcrumbs">
+                <li><a href="./show_event_list.php">HOME</a></li>
+                <li>新規イベント登録</li>
+                <li>イベント登録詳細設定</li>
+                <li>イベント登録確認画面</li>
+            </ul>
+            <article class="c_form-box">
+                <h2>イベント作成確認画面</h2>
+                <p>以下の内容で登録してよろしいですか？</p>
+                <table>
+                    <tr>
+                        <th class="width20">イベント名</th>
+                        <td class="width80">{{event_data.info.eName}}</td>
+                    </tr>
+                    <tr>
+                        <th class="width20">開催地</th>
+                        <td class="width80">{{event_data.info.ePlace}}</td>
+                    </tr>
+                    <tr>
+                        <th class="width20">イベント説明文</th>
+                        <td class="width80">{{event_data.info.eAbout}}</td>
+                    </tr>
+                    <tr>
+                        <th class="width20">参加希望締め切り日</th>
+                        <td class="width80">{{event_data.info.getEDeadlineByFilter}}</td>
+                    </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <th>開催日</th>
+                        <th>参加費</th>
+                        <th>開演時間</th>
+                    </tr>
+                    {% for value in event_data.candidates %}
+                        <tr>
+                            <th>{{value.candidate.getCDateByFilter}}　　</th>
+                            <td>{{value.candidate.cPrice}}円　　</td>
+                            <td>
+                                {% for candidate_time in value.candidate_time %}
+                                    {{candidate_time.getCtTimeByFilter}} /
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <form method="post" action="">
+                    <div class="c_form-box__button-box">
+                        <button class="c_form-box__btn-back" name="btn" value="back">入力画面に戻る</button>
+                        <button class="c_form-box__btn-nomal" name="btn" value="submit">　　登　録　　</button>
+                    </div>
+                </form>
+            </article>
+        </main>
+        <script src="./../javascripts/variableLengthFormDetail.js"></script>
+    </body>
+</html>

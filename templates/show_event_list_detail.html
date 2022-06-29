@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>イベのスケ | サインアップ</title>
+        <meta content="スケジュール調整Webアプリ「イベのスケ」" name="title">
+        <meta content="スケジュール調整アプリです。" name="description">
+        <meta content="スケジュール調整" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./../stylesheet/style.css" rel="stylesheet">
+        <!-- font-awesome -->
+        <script src="https://kit.fontawesome.com/03ebcee952.js" crossorigin="anonymous"></script>
+	    <!-- jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="visuallyhidden">イベのスケ | サインアップ</h1>
+        </header>
+        <main>
+            <ul class="c_breadcrumbs">
+                <li><a href="./show_event_list.php">HOME</a></li>
+                <li>イベント詳細（{{event.info.eName}}）</li>
+            </ul>
+            <h2 class="ml-default">公演情報</h2>
+            <article class="p-show-event-list-detail_info">
+               <h3>{{event.info.eName}}</h3>
+               <dl>
+                    <div>
+                        <dt>公演名</dt>
+                        <dd>{{event.info.eName}}</dd>
+                    </div>
+                    <div>
+                        <dt>開催地</dt>
+                        <dd>{{event.info.ePlace}}</dd>
+                    </div>
+                    <div>
+                        <dt>イベント情報</dt>
+                        <dd>
+                            {{event.info.eAbout}}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>開催期間</dt>
+                        <dd>{{event.info.getEStartDayByFilter}}~{{event.info.getEEndDayByFilter}}</dd>
+                    </div>
+                    <div>
+                        <dt>参加希望締め切り日</dt>
+                        <dd>{{event.info.getEDeadlineByFilter}}</dd>
+                    </div>
+               </dl>
+               <div class="c_button__box">
+                <div class="c_button__btn--nomal"><a href="event_entry.php?eId={{event.info.eId}}">　　　参加を希望する！　　　</a></div>
+            </div>
+            </article>
+            <article class="p-show-event-list-detail_state">
+                <h3>現在の参加者状況</h3>
+                {% for data in event.candidates %}
+                <div>
+                    <p>{{data.candidate.getCDateByFilter}}</p>
+                    <ul>
+                        {% for candidateTime in data.candidate_time %}
+                       <li>
+                            <div class="p-show-event-list-detail_state__status-icon--many"></div>
+                            <div>{{candidateTime.info.getCtTimeByFilter}}~</div>
+                            <div>参加希望者<span>{{candidateTime.count.hCount}}</span>人</div>
+                       </li> 
+                       {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </article>
+        </main>
+        <script src="./../javascripts/variableLengthFormDetail.js"></script>
+    </body>
+</html>

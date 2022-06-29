@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>イベのスケ | サインアップ</title>
+        <meta content="スケジュール調整Webアプリ「イベのスケ」" name="title">
+        <meta content="スケジュール調整アプリです。" name="description">
+        <meta content="スケジュール調整" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./../stylesheet/style.css" rel="stylesheet">
+        <!-- font-awesome -->
+        <script src="https://kit.fontawesome.com/03ebcee952.js" crossorigin="anonymous"></script>
+	    <!-- jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="visuallyhidden">イベのスケ | サインアップ</h1>
+        </header>
+        <main>
+            <ul class="c_breadcrumbs">
+                <li>HOME</li>
+            </ul>
+            <article class="p-show-event-list_cardbox">
+                {% for event in eventList %}
+                <div>
+                    <dl>
+                        <div>
+                            <dt>公演名</dt>
+                            <dd>{{event.eName}}</dd>
+                        </div>
+                        <div>
+                            <dt>開催地</dt>
+                            <dd>{{event.ePlace}}</dd>
+                        </div>
+                        <div>
+                            <dt>開催期間</dt>
+                            <dd>{{event.getEStartDayByFilter}}~{{event.getEEndDayByFilter}}</dd>
+                        </div>
+                        <div>
+                            <dt>参加希望締め切り日</dt>
+                            <dd>{{event.getEDeadlineByFilter}}</dd>
+                        </div>
+                    </dl>
+                    <div class="c_button__box">
+                        <div class="c_button__btn--nomal"><a href="./show_event_list_detail.php?eId={{event.eId}}">詳細＆参加希望へ</a></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </article>
+        </main>
+        <script src="./../javascripts/variableLengthFormDetail.js"></script>
+    </body>
+</html>

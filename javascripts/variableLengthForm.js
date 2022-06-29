@@ -6,7 +6,7 @@ $(function(){
         //x曜日に含まれるフォームの数を調べる
         let count = $(`.c_form-box__input-variable-length-box-wrapper:eq(${index}) > .c_form-box__input-variable-length-box`).length;
         //name配列
-        let name = ["mon[]","tue[]","wed[]","thr[]","fri[]","sat[]","sun[]"];
+        let name = ["Mon[]","Tue[]","Wed[]","Thu[]","Fri[]","Sat[]","Sun[]"];
         if(count == 0){
             $(`.c_form-box__input-variable-length-box-wrapper:eq(${index}) > label`).after(`
                 <div class="c_form-box__input-variable-length-box">

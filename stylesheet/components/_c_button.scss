@@ -1,0 +1,40 @@
+@import "../variables";
+
+.c_button{
+    &__btn{
+        width: auto;
+        height: 4.5rem;
+        line-height: 4rem;
+        text-align: center;
+        color: white;
+        border-radius: 0.6rem;
+        &--back{
+            @extend .c_button__btn;
+            background-color: #696969;
+            &:hover{
+                background-color: #505050;
+            }
+        }
+        &--nomal{
+            @extend .c_button__btn;
+            background-color: #017EFA;
+            &:hover{
+                background-color: #0066cd;
+            }
+        }
+        &>a{
+            width: fit-content;
+            height: 100%;
+            padding: 0 4rem;
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__box{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+}

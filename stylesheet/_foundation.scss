@@ -29,4 +29,14 @@ html{
 
 h2{
     font-size: 3rem;
+    line-height: 7.5rem;
+}
+
+li>a{
+    color: rgb(24, 124, 255);
+    text-decoration: underline;
+}
+
+.ml-default{
+    margin-left: 6rem;
 }
