@@ -1,7 +1,13 @@
 {
     "require": {
         "twig/twig": "^3.4",
-        "php":"^7.4.10"
+        "php":"^7.4.10",
+        "silex/silex": "^2.0.4",
+        "monolog/monolog": "^1.22",
+        "symfony/twig-bridge": "^3"
+    },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
     },
     "autoload":{
         "psr-4":{
