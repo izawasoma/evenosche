@@ -19,72 +19,56 @@
         </header>
         <main>
             <ul class="c_breadcrumbs">
-                <li>HOME</li>
+                <li><a href="./show_event_list.php">HOME</a></li>
+                <li>イベント詳細（{{event.info.eName}}）</li>
             </ul>
             <h2 class="ml-default">公演情報</h2>
             <article class="p-show-event-list-detail_info">
-               <h3>マグノリア銀行からの脱出</h3>
+               <h3>{{event.info.eName}}</h3>
                <dl>
                     <div>
                         <dt>公演名</dt>
-                        <dd>マグノリア銀行からの脱出</dd>
+                        <dd>{{event.info.eName}}</dd>
                     </div>
                     <div>
                         <dt>開催地</dt>
-                        <dd>リアル脱出ゲーム大阪心斎橋店</dd>
+                        <dd>{{event.info.ePlace}}</dd>
                     </div>
                     <div>
                         <dt>イベント情報</dt>
                         <dd>
-                            あなたたちは、マグノリア銀行に忍び込んだ高名な盗賊団。
-                            計画はすべて順調 数々の警備システムを突破し、
-                            機密文書の眠る金庫の前にたどり着いた。
-                            残るは、金庫を破るだけ―――
-                            しかし、そのとき！！！！
-                            館内に警報音が鳴り響いた！！！ 迫り来る警備員の足音
-                            次々にロックされていく扉
-                            最新の警備システムがあなたたちを完全に閉じ込めてしまった！
-                            60分以内にすべての警備を突破し、機密文書を盗み出さなければ、
-                            捕まってしまう！！！
-                            さあ、あなたたちは銀行に仕掛けられたすべての謎を解き明かし、
-                            この銀行から脱出することができるだろうか！！！
+                            {{event.info.eAbout}}
                         </dd>
                     </div>
                     <div>
                         <dt>開催期間</dt>
-                        <dd>2022年7月21日~2022年8月22日</dd>
+                        <dd>{{event.info.getEStartDayByFilter}}~{{event.info.getEEndDayByFilter}}</dd>
                     </div>
                     <div>
                         <dt>参加希望締め切り日</dt>
-                        <dd>2022年7月20日</dd>
+                        <dd>{{event.info.getEDeadlineByFilter}}</dd>
                     </div>
                </dl>
                <div class="c_button__box">
-                <div class="c_button__btn--nomal"><a href="">　　　参加を希望する！　　</a></div>
+                <div class="c_button__btn--nomal"><a href="event_entry.php?eId={{event.info.eId}}">　　　参加を希望する！　　　</a></div>
             </div>
             </article>
             <article class="p-show-event-list-detail_state">
                 <h3>現在の参加者状況</h3>
+                {% for data in event.candidates %}
                 <div>
-                    <p>2022/06/19</p>
+                    <p>{{data.candidate.getCDateByFilter}}</p>
                     <ul>
+                        {% for candidateTime in data.candidate_time %}
                        <li>
                             <div class="p-show-event-list-detail_state__status-icon--many"></div>
-                            <div>10:00~</div>
-                            <div>参加希望者<span>4</span>人</div>
+                            <div>{{candidateTime.info.getCtTimeByFilter}}~</div>
+                            <div>参加希望者<span>{{candidateTime.count.hCount}}</span>人</div>
                        </li> 
-                       <li>
-                            <div class="p-show-event-list-detail_state__status-icon--fair"></div>
-                            <div>10:00~</div>
-                            <div>参加希望者<span>4</span>人</div>
-                        </li> 
-                        <li>
-                             <div class="p-show-event-list-detail_state__status-icon--few"></div>
-                             <div>10:00~</div>
-                             <div>参加希望者<span>4</span>人</div>
-                         </li> 
+                       {% endfor %}
                     </ul>
                 </div>
+                {% endfor %}
             </article>
         </main>
         <script src="./../javascripts/variableLengthFormDetail.js"></script>

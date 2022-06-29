@@ -20,7 +20,7 @@ class CandidateTimeDAO {
     public function insert(CandidateTime $candidateTime,int $c_id): int {
         $sqlInsert = "INSERT INTO candidate_time (c_id,ct_time) VALUES (:c_id,:ct_time)";
         $stmt = $this->db->prepare($sqlInsert);
-        $stmt->bindValue(":ct_time", $candidateTime->getCtTime(), PDO::PARAM_STR);
+        $stmt->bindValue(":ct_time", $candidateTime->getCtTime6dig(), PDO::PARAM_STR);
         $stmt->bindValue(":c_id", $c_id, PDO::PARAM_INT);
         $result = $stmt->execute();
 
@@ -53,6 +53,29 @@ class CandidateTimeDAO {
         }
 
         return $candidateTime;
+    }
+
+    public function findByCId(int $cId) :array{
+        $sql = "SELECT * FROM candidate_time WHERE c_id = :c_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":c_id",$cId,PDO::PARAM_INT);
+        $result = $stmt->execute();
+
+        $candidateTimeList = [];
+
+        while($row = $stmt->fetch()){
+            $ctId = $row["ct_id"];
+            $cId = $row["c_id"];
+            $ctTime = $row["ct_time"];
+
+            $candidateTime = new CandidateTime;
+            $candidateTime->setCtId($ctId);
+            $candidateTime->setCId($cId);
+            $candidateTime->setCtTime($ctTime);
+            $candidateTimeList[$ctId] = $candidateTime;
+        }
+
+        return $candidateTimeList;
     }
 }
 ?>

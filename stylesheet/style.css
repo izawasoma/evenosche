@@ -527,6 +527,11 @@ h2 {
   line-height: 7.5rem;
 }
 
+li > a {
+  color: #187cff;
+  text-decoration: underline;
+}
+
 .ml-default {
   margin-left: 6rem;
 }
@@ -998,7 +1003,7 @@ h2 {
   width: 90%;
   display: grid;
   grid-template-columns: 20% 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 5rem 6rem;
   border-radius: 2rem;
   background-color: white;

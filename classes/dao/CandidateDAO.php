@@ -58,5 +58,30 @@ class CandidateDAO {
 
         return $candidate;
     }
+
+    public function findByEid(int $EId) :array{
+        $sql = "SELECT * FROM candidate WHERE e_id = :e_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":e_id",$EId,PDO::PARAM_INT);
+        $result = $stmt->execute();
+
+        $candidateList = [];
+
+        while($row = $stmt->fetch()){
+            $cId = $row["c_id"];
+            $eId = $row["e_id"];
+            $cDate = $row["c_date"];
+            $cPrice = $row["c_price"];
+
+            $candidate = new Candidate;
+            $candidate->setCId($cId);
+            $candidate->setEId($eId);
+            $candidate->setCDate($cDate);
+            $candidate->setCPrice($cPrice);
+            $candidateList[$cId] = $candidate;
+        }
+
+        return $candidateList;
+    }
 }
 ?>

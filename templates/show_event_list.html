@@ -22,121 +22,31 @@
                 <li>HOME</li>
             </ul>
             <article class="p-show-event-list_cardbox">
+                {% for event in eventList %}
                 <div>
                     <dl>
                         <div>
                             <dt>公演名</dt>
-                            <dd>マグノリア銀行からの脱出</dd>
+                            <dd>{{event.eName}}</dd>
                         </div>
                         <div>
                             <dt>開催地</dt>
-                            <dd>リアル脱出ゲーム大阪心斎橋店</dd>
+                            <dd>{{event.ePlace}}</dd>
                         </div>
                         <div>
                             <dt>開催期間</dt>
-                            <dd>2022年7月21日~2022年8月22日</dd>
+                            <dd>{{event.getEStartDayByFilter}}~{{event.getEEndDayByFilter}}</dd>
                         </div>
                         <div>
                             <dt>参加希望締め切り日</dt>
-                            <dd>2022年7月20日</dd>
+                            <dd>{{event.getEDeadlineByFilter}}</dd>
                         </div>
                     </dl>
                     <div class="c_button__box">
-                        <div class="c_button__btn--nomal"><a href="">詳細＆参加希望へ</a></div>
+                        <div class="c_button__btn--nomal"><a href="./show_event_list_detail.php?eId={{event.eId}}">詳細＆参加希望へ</a></div>
                     </div>
                 </div>
-                <div>
-                    <dl>
-                        <div>
-                            <dt>公演名</dt>
-                            <dd>マグノリア銀行からの脱出</dd>
-                        </div>
-                        <div>
-                            <dt>開催地</dt>
-                            <dd>リアル脱出ゲーム大阪心斎橋店</dd>
-                        </div>
-                        <div>
-                            <dt>開催期間</dt>
-                            <dd>2022年7月21日~2022年8月22日</dd>
-                        </div>
-                        <div>
-                            <dt>参加希望締め切り日</dt>
-                            <dd>2022年7月20日</dd>
-                        </div>
-                    </dl>
-                    <div class="c_button__box">
-                        <div class="c_button__btn--nomal"><a href="">詳細＆参加希望へ</a></div>
-                    </div>
-                </div>
-                <div>
-                    <dl>
-                        <div>
-                            <dt>公演名</dt>
-                            <dd>マグノリア銀行からの脱出</dd>
-                        </div>
-                        <div>
-                            <dt>開催地</dt>
-                            <dd>リアル脱出ゲーム大阪心斎橋店</dd>
-                        </div>
-                        <div>
-                            <dt>開催期間</dt>
-                            <dd>2022年7月21日~2022年8月22日</dd>
-                        </div>
-                        <div>
-                            <dt>参加希望締め切り日</dt>
-                            <dd>2022年7月20日</dd>
-                        </div>
-                    </dl>
-                    <div class="c_button__box">
-                        <div class="c_button__btn--nomal"><a href="">詳細＆参加希望へ</a></div>
-                    </div>
-                </div>
-                <div>
-                    <dl>
-                        <div>
-                            <dt>公演名</dt>
-                            <dd>マグノリア銀行からの脱出</dd>
-                        </div>
-                        <div>
-                            <dt>開催地</dt>
-                            <dd>リアル脱出ゲーム大阪心斎橋店</dd>
-                        </div>
-                        <div>
-                            <dt>開催期間</dt>
-                            <dd>2022年7月21日~2022年8月22日</dd>
-                        </div>
-                        <div>
-                            <dt>参加希望締め切り日</dt>
-                            <dd>2022年7月20日</dd>
-                        </div>
-                    </dl>
-                    <div class="c_button__box">
-                        <div class="c_button__btn--nomal"><a href="">詳細＆参加希望へ</a></div>
-                    </div>
-                </div>
-                <div>
-                    <dl>
-                        <div>
-                            <dt>公演名</dt>
-                            <dd>マグノリア銀行からの脱出</dd>
-                        </div>
-                        <div>
-                            <dt>開催地</dt>
-                            <dd>リアル脱出ゲーム大阪心斎橋店</dd>
-                        </div>
-                        <div>
-                            <dt>開催期間</dt>
-                            <dd>2022年7月21日~2022年8月22日</dd>
-                        </div>
-                        <div>
-                            <dt>参加希望締め切り日</dt>
-                            <dd>2022年7月20日</dd>
-                        </div>
-                    </dl>
-                    <div class="c_button__box">
-                        <div class="c_button__btn--nomal"><a href="">詳細＆参加希望へ</a></div>
-                    </div>
-                </div>
+                {% endfor %}
             </article>
         </main>
         <script src="./../javascripts/variableLengthFormDetail.js"></script>

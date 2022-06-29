@@ -21,15 +21,24 @@ class CandidateTime {
         $this->cId = $cId;
     }
     public function getCtTime(): ?string {
-        return substr($this->ctTime,0,4);
+        return $this->ctTime;
     }
     public function setCtTime(string $ctTime): void {
-        $this->ctTime = $ctTime."00";
+        $this->ctTime = $ctTime;
     }
+    
     public function getCtTimeByFilter(): ?string{
-        $hour = substr($this->ctTime,0,2);
-        $min = substr($this->ctTime,2,2);
-        return $hour . ":" . $min;
+        if(strlen($this->ctTime) == 4){
+            $hour = substr($this->ctTime,0,2);
+            $min = substr($this->ctTime,2,2);
+            return $hour . ":" . $min;
+        }
+        else{
+            return substr($this->ctTime,0,5);
+        }
+    }
+    public function getCtTime6dig(): ?string{
+        return $this->ctTime."00";
     }
 }
 ?>

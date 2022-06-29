@@ -73,5 +73,40 @@ class EventDAO {
 
         return $event;
     }
+
+    public function findAll() :array{
+        $sql = "SELECT * FROM event";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+
+        $eventList = [];
+
+        while($row = $stmt->fetch()){
+            $eId = $row["e_id"];
+            $eName = $row["e_name"];
+            $eAbout = $row["e_about"];
+            $eDeadline = $row["e_deadline"];
+            $ePlace = $row["e_place"];
+            $eStartDay = $row["e_start_day"];
+            $eEndDay = $row["e_end_day"];
+            $eHighPrice = $row["e_high_price"];
+            $eNomalPrice = $row["e_nomal_price"];
+
+            $event = new Event;
+            $event->setEId($eId);
+            $event->setEName($eName);
+            $event->setEAbout($eAbout);
+            $event->setEDeadline($eDeadline);
+            $event->setEPlace($ePlace);
+            $event->setEStartDay($eStartDay);
+            $event->setEEndDay($eEndDay);
+            $event->setEHighPrice($eHighPrice);
+            $event->setENomalPrice($eNomalPrice);
+
+            $eventList[$eId] = $event;
+        }
+
+        return $eventList;
+    }
 }
 ?>

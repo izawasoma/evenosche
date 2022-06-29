@@ -24,7 +24,7 @@ class Candidate {
     public function getCDate(): ?string {
         return $this->cDate;
     }
-    public function setCDate(int $cDate): void {
+    public function setCDate(string $cDate): void {
         $this->cDate = $cDate;
     }
     public function getCPrice(): ?string {

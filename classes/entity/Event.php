@@ -71,5 +71,11 @@ class Event {
     public function getEDeadlineByFilter(): ?string{
         return Date("Y年m月d日",strtotime($this->eDeadline));
     }
+    public function getEStartDayByFilter(): ?string{
+        return Date("Y年m月d日",strtotime($this->eStartDay));
+    }
+    public function getEEndDayByFilter(): ?string{
+        return Date("Y年m月d日",strtotime($this->eEndDay));
+    }
 }
 ?>
