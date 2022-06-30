@@ -21,9 +21,9 @@ class ComposerStaticInitf657308b01b2863f511a6e94268aae34
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
-        'L' => 
+        'E' => 
         array (
-            'LocalMyStudy\\Evenosche\\Classes\\' => 31,
+            'Evenosche\\Classes\\' => 18,
         ),
         'D' => 
         array (
@@ -47,7 +47,7 @@ class ComposerStaticInitf657308b01b2863f511a6e94268aae34
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'LocalMyStudy\\Evenosche\\Classes\\' => 
+        'Evenosche\\Classes\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',
         ),

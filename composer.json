@@ -5,7 +5,7 @@
     },
     "autoload":{
         "psr-4":{
-            "LocalMyStudy\\Evenosche\\Classes\\":"classes/"
+            "Evenosche\\Classes\\":"classes/"
         }
     }
 }
