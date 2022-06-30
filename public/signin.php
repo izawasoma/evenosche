@@ -11,7 +11,6 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use LocalMyStudy\Evenosche\Classes\Conf;
 use LocalMyStudy\Evenosche\Classes\Dao\UserDAO;
-use LocalMyStudy\Evenosche\Classes\Entity\User;
 
 
 $loader = new FilesystemLoader( __DIR__ ."/../templates");
