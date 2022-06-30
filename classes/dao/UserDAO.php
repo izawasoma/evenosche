@@ -1,9 +1,9 @@
 <?php
 
-namespace LocalMyStudy\Evenosche\Classes\Dao;
+namespace Evenosche\Classes\Dao;
 
 use PDO;
-use LocalMyStudy\Evenosche\Classes\Entity\User;
+use Evenosche\Classes\Entity\User;
 
 class UserDAO {
     //DB接続オブジェクト
