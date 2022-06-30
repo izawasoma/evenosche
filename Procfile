@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 evenosche
+web: vendor/bin/heroku-php-apache2 evenosche/
