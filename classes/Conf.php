@@ -1,6 +1,6 @@
 <?php
 
-namespace Evenosche\Classes;
+namespace LocalMyStudy\Evenosche\Classes;
 
 class Conf{
     const DB_DNS = "mysql:host=us-cdbr-east-06.cleardb.net;dbname=heroku_ce2395704d75e21;charset=utf8";

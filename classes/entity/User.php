@@ -1,6 +1,6 @@
 <?php
 
-namespace Evenosche\Classes\Entity;
+namespace LocalMyStudy\Evenosche\Classes\Entity;
 
 class User {
     private ?int $uId = null;

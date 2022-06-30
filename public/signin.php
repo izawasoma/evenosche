@@ -9,8 +9,8 @@ use PDO;
 use PDOException;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
-use Evenosche\Classes\Conf;
-use Evenosche\Classes\Dao\UserDAO;
+use LocalMyStudy\Evenosche\Classes\Conf;
+use LocalMyStudy\Evenosche\Classes\Dao\UserDAO;
 
 $loader = new FilesystemLoader( __DIR__ ."/../templates");
 $twig = new Environment($loader);
