@@ -14,7 +14,7 @@ use LocalMyStudy\Evenosche\Classes\Dao\UserDAO;
 use LocalMyStudy\Evenosche\Classes\Entity\User;
 
 
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"]."/evenosche/templates");
+$loader = new FilesystemLoader( __DIR__ ."/../templates");
 $twig = new Environment($loader);
 
 $templatePath = "signin.html";
