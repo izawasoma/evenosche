@@ -1,6 +1,6 @@
 <?php
 
-namespace LocalMyStudy\Evenosche\Classes\Entity;
+namespace LocalMyStudy\Evenosche\Classes\entity;
 
 class CandidateTime {
     private ?int $ctId = null;

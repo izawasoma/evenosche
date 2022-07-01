@@ -1,6 +1,6 @@
 <?php
 
-namespace LocalMyStudy\Evenosche\Classes\Dao;
+namespace LocalMyStudy\Evenosche\Classes\dao;
 
 use PDO;
 use LocalMyStudy\Evenosche\Classes\Entity\Hope;

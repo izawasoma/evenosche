@@ -1,6 +1,0 @@
-23:10:10:310 [WARN]	Request Failed. ErrorCode: 112007 errorMessage: Platform Status, Send Request Failed. WinHTTP Name Not Resolved. last error code = 12007 
-23:12:11:172 [WARN]	Request Failed. ErrorCode: 32 errorMessage: Network Error, Send Request Failed. WinHTTP Connection Error. last error code = 12030 
-23:12:11:210 [WARN]	Request Failed. ErrorCode: 112007 errorMessage: Platform Status, Send Request Failed. WinHTTP Name Not Resolved. last error code = 12007 
-23:13:49:369 [WARN]	Request Failed. ErrorCode: 32 errorMessage: Network Error, Receive Response Failed. WinHTTP Connection Error. last error code = 12030 
-23:13:49:439 [WARN]	Request Failed. ErrorCode: 112007 errorMessage: Platform Status, Send Request Failed. WinHTTP Name Not Resolved. last error code = 12007 
-23:13:59:376 [WARN]	Request Failed. ErrorCode: 112007 errorMessage: Platform Status, Send Request Failed. WinHTTP Name Not Resolved. last error code = 12007 

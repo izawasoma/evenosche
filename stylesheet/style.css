@@ -549,6 +549,37 @@ li > a {
     background-color: #081A51;
     width: 100%;
     height: 100%;
+    padding: 2rem 0;
+  }
+  header > img {
+    width: 80%;
+    display: block;
+    margin: 2rem auto 5rem auto;
+  }
+  header > ul {
+    width: 100%;
+  }
+  header > ul > li {
+    margin: 1rem 0;
+    width: 100%;
+    height: 4rem;
+  }
+  header > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+  }
+  header > ul > li > a > i {
+    margin-right: 2rem;
+  }
+  header > ul > li > a:hover {
+    background-color: #5c6a92;
   }
   main {
     grid-column: 2/3;
