@@ -2,8 +2,8 @@
     "require": {
         "twig/twig": "^3.4"
     },
-    "autoload":{
-        "psr-4":{
+    "autoload":  {
+        "psr-4": {
             "LocalMyStudy\\Evenosche\\Classes\\":"classes/"
         }
     }

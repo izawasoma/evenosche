@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8c30ef75bd0323263711f89fb623eb39
+class ComposerStaticInit08ff4001911b196c61f0cdbaed1c6e7b
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -25,13 +25,6 @@ class ComposerStaticInit8c30ef75bd0323263711f89fb623eb39
         array (
             'LocalMyStudy\\Evenosche\\Classes\\' => 31,
         ),
-        'D' => 
-        array (
-            'Doctrine\\Deprecations\\' => 22,
-            'Doctrine\\DBAL\\' => 14,
-            'Doctrine\\Common\\Cache\\' => 22,
-            'Doctrine\\Common\\' => 16,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -51,22 +44,6 @@ class ComposerStaticInit8c30ef75bd0323263711f89fb623eb39
         array (
             0 => __DIR__ . '/../..' . '/classes',
         ),
-        'Doctrine\\Deprecations\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
-        ),
-        'Doctrine\\DBAL\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
-        ),
-        'Doctrine\\Common\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
-        ),
-        'Doctrine\\Common\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-        ),
     );
 
     public static $classMap = array (
@@ -76,9 +53,9 @@ class ComposerStaticInit8c30ef75bd0323263711f89fb623eb39
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8c30ef75bd0323263711f89fb623eb39::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8c30ef75bd0323263711f89fb623eb39::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit8c30ef75bd0323263711f89fb623eb39::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit08ff4001911b196c61f0cdbaed1c6e7b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit08ff4001911b196c61f0cdbaed1c6e7b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit08ff4001911b196c61f0cdbaed1c6e7b::$classMap;
 
         }, null, ClassLoader::class);
     }
