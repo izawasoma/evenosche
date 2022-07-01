@@ -3,7 +3,7 @@
 namespace LocalMyStudy\Evenosche\Classes\dao;
 
 use PDO;
-use LocalMyStudy\Evenosche\Classes\Entity\Hope;
+use LocalMyStudy\Evenosche\Classes\entity\Hope;
 
 class HopeDAO {
     //DB接続オブジェクト

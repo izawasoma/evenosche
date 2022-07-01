@@ -4,17 +4,17 @@ namespace LocalMyStudy\Evenosche\exec;
 
 session_start();
 
-require_once ($_SERVER["DOCUMENT_ROOT"]) . "/evenosche/vendor/autoload.php";
-require_once ($_SERVER["DOCUMENT_ROOT"]) . "/evenosche/function/validation.php";
+require_once ("../vendor/autoload.php");
+require_once ("../function/validation.php");
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
-use LocalMyStudy\Evenosche\Classes\Entity\Event;
-use LocalMyStudy\Evenosche\Classes\Entity\Candidate;
-use LocalMyStudy\Evenosche\Classes\Entity\CandidateTime;
-use LocalMyStudy\Evenosche\Classes\Dao\EventDAO;
-use LocalMyStudy\Evenosche\Classes\Dao\CandidateDAO;
-use LocalMyStudy\Evenosche\Classes\Dao\CandidateTimeDAO;
+use LocalMyStudy\Evenosche\Classes\entity\Event;
+use LocalMyStudy\Evenosche\Classes\entity\Candidate;
+use LocalMyStudy\Evenosche\Classes\entity\CandidateTime;
+use LocalMyStudy\Evenosche\Classes\dao\EventDAO;
+use LocalMyStudy\Evenosche\Classes\dao\CandidateDAO;
+use LocalMyStudy\Evenosche\Classes\dao\CandidateTimeDAO;
 use PDO;
 use PDOException;
 use LocalMyStudy\Evenosche\Classes\Conf;
@@ -61,7 +61,7 @@ elseif(isset($_POST["btn"]) && $_POST["btn"] == "back"){
 
 
 
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"] . "/evenosche/templates");
+$loader = new FilesystemLoader("../templates");
 $twig = new Environment($loader);
 $html = $twig->render($templatePath, $assign);
 echo $html;

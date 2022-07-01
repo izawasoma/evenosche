@@ -4,16 +4,16 @@ namespace LocalMyStudy\Evenosche\exec;
 
 session_start();
 
-require_once ($_SERVER["DOCUMENT_ROOT"]) . "/evenosche/vendor/autoload.php";
-require_once ($_SERVER["DOCUMENT_ROOT"]) . "/evenosche/function/validation.php";
+require_once ("../vendor/autoload.php");
+require_once ("../function/validation.php");
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
-use LocalMyStudy\Evenosche\Classes\Entity\Hope;
-use LocalMyStudy\Evenosche\Classes\Dao\EventDAO;
-use LocalMyStudy\Evenosche\Classes\Dao\CandidateDAO;
-use LocalMyStudy\Evenosche\Classes\Dao\CandidateTimeDAO;
-use LocalMyStudy\Evenosche\Classes\Dao\HopeDAO;
+use LocalMyStudy\Evenosche\Classes\entity\Hope;
+use LocalMyStudy\Evenosche\Classes\dao\EventDAO;
+use LocalMyStudy\Evenosche\Classes\dao\CandidateDAO;
+use LocalMyStudy\Evenosche\Classes\dao\CandidateTimeDAO;
+use LocalMyStudy\Evenosche\Classes\dao\HopeDAO;
 use PDO;
 use PDOException;
 use LocalMyStudy\Evenosche\Classes\Conf;
@@ -21,7 +21,7 @@ use LocalMyStudy\Evenosche\Classes\Conf;
 $assign = [];
 $templatePath = "event_entry.html";
 
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"] . "/evenosche/templates");
+$loader = new FilesystemLoader("../templates");
 $twig = new Environment($loader);
 
 $eId = $_GET["eId"];

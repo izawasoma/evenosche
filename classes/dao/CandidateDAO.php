@@ -3,7 +3,7 @@
 namespace LocalMyStudy\Evenosche\Classes\dao;
 
 use PDO;
-use LocalMyStudy\Evenosche\Classes\Entity\Candidate;
+use LocalMyStudy\Evenosche\Classes\entity\Candidate;
 
 class CandidateDAO {
     //DB接続オブジェクト

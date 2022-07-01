@@ -4,14 +4,14 @@ namespace LocalMyStudy\Evenosche\exec;
 
 session_start();
 
-require_once ($_SERVER["DOCUMENT_ROOT"]) . "/evenosche/vendor/autoload.php";
-require_once ($_SERVER["DOCUMENT_ROOT"]) . "/evenosche/function/validation.php";
+require_once ("../vendor/autoload.php");
+require_once ("../function/validation.php");
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
-use LocalMyStudy\Evenosche\Classes\Entity\Event;
-use LocalMyStudy\Evenosche\Classes\Entity\Candidate;
-use LocalMyStudy\Evenosche\Classes\Entity\CandidateTime;
+use LocalMyStudy\Evenosche\Classes\entity\Event;
+use LocalMyStudy\Evenosche\Classes\entity\Candidate;
+use LocalMyStudy\Evenosche\Classes\entity\CandidateTime;
 
 $candidateParents = "";
 $assign = [];
@@ -132,7 +132,7 @@ if (isset($_POST["btn"])) {
     }
 }
 
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"] . "/evenosche/templates");
+$loader = new FilesystemLoader("../templates");
 $twig = new Environment($loader);
 $html = $twig->render($templatePath, $assign);
 echo $html;

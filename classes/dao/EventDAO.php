@@ -3,7 +3,7 @@
 namespace LocalMyStudy\Evenosche\Classes\dao;
 
 use PDO;
-use LocalMyStudy\Evenosche\Classes\Entity\Event;
+use LocalMyStudy\Evenosche\Classes\entity\Event;
 
 class EventDAO {
     //DB接続オブジェクト

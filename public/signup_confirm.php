@@ -11,8 +11,8 @@ use PDOException;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use LocalMyStudy\Evenosche\Classes\Conf;
-use LocalMyStudy\Evenosche\Classes\Dao\UserDAO;
-use LocalMyStudy\Evenosche\Classes\Entity\User;
+use LocalMyStudy\Evenosche\Classes\dao\UserDAO;
+use LocalMyStudy\Evenosche\Classes\entity\User;
 
 
 $loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"]."/evenosche/templates");
