@@ -3,7 +3,7 @@
 namespace LocalMyStudy\Evenosche\exec;
 session_start();
 
-require_once($_SERVER["DOCUMENT_ROOT"])."/evenosche/vendor/autoload.php";
+require_once("../vendor/autoload.php");
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;

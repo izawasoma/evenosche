@@ -2,7 +2,7 @@
 
 namespace LocalMyStudy\Evenosche\exec;
 
-require_once($_SERVER["DOCUMENT_ROOT"])."/evenosche/vendor/autoload.php";
+require_once("../vendor/autoload.php");
 
 session_start();
 
