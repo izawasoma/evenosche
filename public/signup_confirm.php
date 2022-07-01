@@ -15,7 +15,7 @@ use LocalMyStudy\Evenosche\Classes\dao\UserDAO;
 use LocalMyStudy\Evenosche\Classes\entity\User;
 
 
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"]."/evenosche/templates");
+$loader = new FilesystemLoader("../templates");
 $twig = new Environment($loader);
 
 $templatePath = "signup_confirm.html";
