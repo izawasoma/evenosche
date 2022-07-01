@@ -2,8 +2,7 @@
 
 namespace LocalMyStudy\Evenosche\exec;
 
-var_dump($_SERVER["DOCUMENT_ROOT"].__FILE__);
-require_once($_SERVER["DOCUMENT_ROOT"]."/evenosche/vendor/autoload.php");
+require_once("../vendor/autoload.php");
 session_start();
 
 use PDO;
