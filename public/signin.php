@@ -2,7 +2,7 @@
 
 namespace LocalMyStudy\Evenosche\exec;
 
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once($_SERVER["DOCUMENT_ROOT"])."/evenosche/vendor/autoload.php";
 session_start();
 
 use PDO;
@@ -12,7 +12,7 @@ use Twig\Environment;
 use LocalMyStudy\Evenosche\Classes\Conf;
 use LocalMyStudy\Evenosche\Classes\dao\UserDAO;
 
-$loader = new FilesystemLoader( __DIR__ ."/../templates");
+$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"]."/evenosche/templates");
 $twig = new Environment($loader);
 
 $templatePath = "signin.html";
