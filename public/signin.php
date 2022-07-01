@@ -12,7 +12,7 @@ use Twig\Environment;
 use LocalMyStudy\Evenosche\Classes\Conf;
 use LocalMyStudy\Evenosche\Classes\dao\UserDAO;
 
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"]."/evenosche/templates");
+$loader = new FilesystemLoader("../templates");
 $twig = new Environment($loader);
 
 $templatePath = "signin.html";
