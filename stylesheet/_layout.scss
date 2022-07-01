@@ -12,6 +12,37 @@
         background-color: #081A51;
         width: 100%;
         height: 100%;
+        padding: 2rem 0;
+        &>img{
+            width: 80%;
+            display: block;
+            margin: 2rem auto 5rem auto;
+        }
+        &>ul{
+            width: 100%;
+            &>li{
+                margin: 1rem 0;
+                width: 100%;
+                height: 4rem;
+                &>a{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    color: white;
+                    text-decoration: none;
+                    &>i{
+                        margin-right: 2rem;
+                    }
+                    &:hover{
+                        background-color: #5c6a92;
+                    }
+                }
+            }
+        }
     }
     main{
         grid-column: 2/3;

@@ -2,8 +2,7 @@
 
 namespace LocalMyStudy\Evenosche\exec;
 
-require_once($_SERVER["DOCUMENT_ROOT"])."/evenosche/vendor/autoload.php";
-var_dump(($_SERVER["DOCUMENT_ROOT"])."/evenosche/vendor/autoload.php");
+require_once __DIR__ . "/../vendor/autoload.php";
 session_start();
 
 use PDO;
@@ -11,11 +10,9 @@ use PDOException;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use LocalMyStudy\Evenosche\Classes\Conf;
-use LocalMyStudy\Evenosche\Classes\Dao\UserDAO;
-use LocalMyStudy\Evenosche\Classes\Entity\User;
+use LocalMyStudy\Evenosche\Classes\dao\UserDAO;
 
-
-$loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"]."/evenosche/templates");
+$loader = new FilesystemLoader( __DIR__ ."/../templates");
 $twig = new Environment($loader);
 
 $templatePath = "signin.html";
