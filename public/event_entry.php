@@ -31,7 +31,7 @@ $twig = new Environment($loader);
 
 $eId = $_GET["eId"];
 if (isset($_POST["entry"])) {
-    $uId = 2;
+    $uId = $_SESSION["userId"];
     $hDate = date("YmdHis");
     $errorFlg = 0;
     try {
