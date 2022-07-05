@@ -4,6 +4,11 @@ namespace LocalMyStudy\Evenosche\exec;
 
 session_start();
 
+if(!isset($_SESSION["userId"])){
+    header("Location:./signin.php");
+    exit;
+}
+
 require_once ("../vendor/autoload.php");
 require_once ("../function/validation.php");
 
