@@ -17,11 +17,7 @@ use PDO;
 use PDOException;
 use LocalMyStudy\Evenosche\Classes\Conf;
 
-use LocalMyStudy\Evenosche\Classes\entity\Hope;
-use LocalMyStudy\Evenosche\Classes\dao\EventDAO;
-use LocalMyStudy\Evenosche\Classes\dao\CandidateDAO;
-use LocalMyStudy\Evenosche\Classes\dao\CandidateTimeDAO;
-use LocalMyStudy\Evenosche\Classes\dao\HopeDAO;
+use LocalMyStudy\Evenosche\Classes\dao\EventInfoDAO;
 
 $assign = [];
 $templatePath = "show_event_list_detail.html";
@@ -33,27 +29,8 @@ $eId  = $_GET["eId"];
 
 try{
     $db = new PDO(Conf::DB_DNS,Conf::DB_USERNAME,Conf::DB_PASSWORD);
-    $eventDAO = new EventDAO($db);
-    $candidateDAO = new CandidateDAO($db);
-    $candidateTimeDAO = new CandidateTimeDAO($db);
-    $hopeDAO = new HopeDAO($db);
-    $event = [];
-    $event["info"] = $eventDAO->findByPK($eId);
-    $candidateList = $candidateDAO->findByEid($eId);
-    $event["candidates"] = [];
-    $i = 0;
-    foreach($candidateList as $candidate){
-        $event["candidates"][$i]["candidate"] = $candidate;
-        $candidateTimeList = $candidateTimeDAO->findByCId($candidate->getCId());
-        $j = 0;
-        foreach($candidateTimeList as $candidateTime){
-            $event["candidates"][$i]["candidate_time"][$j]["info"] = $candidateTime;
-            $event["candidates"][$i]["candidate_time"][$j]["count"] = $hopeDAO->countByCtId($candidateTime->getCtId());
-            $j++;
-        }
-        $i++;
-    }
-    $assign["event"] = $event;
+    $eventInfoDAO = new EventInfoDAO($db);
+    $assign["event"] = $eventInfoDAO->findByEId($eId);
 }
 catch(PDOException $ex){
 

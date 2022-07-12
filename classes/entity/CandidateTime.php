@@ -26,7 +26,6 @@ class CandidateTime {
     public function setCtTime(string $ctTime): void {
         $this->ctTime = $ctTime;
     }
-    
     public function getCtTimeByFilter(): ?string{
         if(strlen($this->ctTime) == 4){
             $hour = substr($this->ctTime,0,2);

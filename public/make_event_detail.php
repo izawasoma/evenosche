@@ -39,9 +39,6 @@ if(isset($_POST["btn"])){
         $candidates[] = $work;
     }
     $event_data["candidates"] = $candidates;
-    /* echo "<pre>";
-    var_dump($event_data);
-    echo "</pre>"; */
     $_SESSION["event_data"] = serialize($event_data);
     header("Location:./make_event_confirm.php");
     exit;
