@@ -4,6 +4,11 @@ namespace LocalMyStudy\Evenosche\exec;
 
 session_start();
 
+if(!isset($_SESSION["userId"])){
+    header("Location:./signin.php");
+    exit;
+}
+
 require_once ("../vendor/autoload.php");
 require_once ("../function/validation.php");
 
@@ -34,23 +39,10 @@ if(isset($_POST["btn"])){
         $candidates[] = $work;
     }
     $event_data["candidates"] = $candidates;
-    /* echo "<pre>";
-    var_dump($event_data);
-    echo "</pre>"; */
     $_SESSION["event_data"] = serialize($event_data);
     header("Location:./make_event_confirm.php");
     exit;
 }
-
-?>
-
-<!-- <?php if(isset($_POST)): ?>
-    <pre>
-        <?php //var_dump($assign["event_data"]) ?>
-    </pre>
-<?php endif; ?> -->
-
-<?php
 
 $loader = new FilesystemLoader("../templates");
 $twig = new Environment($loader);

@@ -12,7 +12,7 @@ $(function(){
                 <div class="c_form-box__input-variable-length-box">
                     <i class="fas fa-times-circle"></i>
                     <input id="scope" class="width60" name="candidates[${date}][time][]" type="number" value="" placeholder="例）09:00ならば「0900」" required>
-                    <p>??:??</p>
+                    <p></p>
                 </div>
             `);
         }
@@ -21,7 +21,7 @@ $(function(){
                 <div class="c_form-box__input-variable-length-box">
                     <i class="fas fa-times-circle"></i>
                     <input id="scope" class="width60" name="candidates[${date}][time][]" type="number" value="" placeholder="例）09:00ならば「0900」" required>
-                    <p>??:??</p>
+                    <p></p>
                 </div>
             `);
         }

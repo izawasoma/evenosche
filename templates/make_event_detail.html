@@ -22,6 +22,7 @@
                 <li><a href="./signup.php">新規会員登録</a></li>
                 <li><a href="./signin.php">ログイン</a></li>
                 <li><a href="./make_event.php">新規イベント作成</a></li>
+                <li><a href="./logout.php">ログアウト</a></li>
             </ul>
         </header>
         <main>
@@ -42,7 +43,7 @@
                             <i class="fas fa-times-circle"></i>
                             <input id="scope" class="width60" name="candidates[{{candidate.candidate.cDate}}][time][]
                             " type="number" value="{{candidate_time_object.ctTime}}" placeholder="例）09:00ならば「0900」" required>
-                            <p>??:??</p>
+                            <p></p>
                         </div>
                         {% endfor %}
                         <p></p>
